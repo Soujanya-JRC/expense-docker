@@ -20,7 +20,7 @@ services:
     depends_on:
     - mysql
 
-  frontend:
+  Frontend:
     image: frontend
     networks:
     - expense
