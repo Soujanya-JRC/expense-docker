@@ -1,6 +1,5 @@
 networks:
   expense: {}
-  
 volumes:
   mysql:
 services:
@@ -30,7 +29,3 @@ services:
     - 80:80
     depends_on:
     - backend
-
-  
-  
-
