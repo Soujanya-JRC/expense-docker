@@ -1,34 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: backend-blue
   namespace: expense
+  # labels of deployment resource
   labels:
     app: backend
     tier: backend
-    purpose: expense
+    project: expense
     version: blue
 spec:
   replicas: 1
   selector:
     matchLabels:
-       app: backend
-       tier: backend
-       purpose: expense
-       version: blue
+      app: backend
+      tier: backend
+      project: expense
+      version: blue
   template:
     metadata:
       labels:
-         app: backend
-         tier: backend
-         purpose: expense
-         version: blue
+        app: backend
+        tier: backend
+        project: expense
+        version: blue
     spec:
       containers:
       - name: nginx
         image: riyacham/backend:1.0.0
         envFrom:
         - configMapRef:
-          name: backend
-        
-
+            name: backend
